@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useSearchProductBy } from "@/composables/SearchProduct";
+
 const url = "https://real-time-product-search.p.rapidapi.com/search";
 const valueInput = ref("");
 </script>

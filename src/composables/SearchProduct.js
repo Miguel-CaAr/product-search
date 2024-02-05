@@ -1,9 +1,10 @@
 import axios from "axios";
 import { ref } from "vue";
+import { useProductsStore } from "@/stores/Products";
 
 export const useSearchProductBy = (isAProductId, value, url) => {
-  const products = ref([]);
   const param = ref("");
+  const useProducts = useProductsStore();
 
   isAProductId ? (param.value = "product_id") : (param.value = "q");
 
@@ -16,19 +17,20 @@ export const useSearchProductBy = (isAProductId, value, url) => {
       language: "es",
     },
     headers: {
-      "X-RapidAPI-Key": "330bee5ea3msh12145925e1b632ep12478fjsn899913bf43b9",
+      "X-RapidAPI-Key": "7181fc8c00mshfeee7afe9d857a7p1d50ecjsn027cf4dca720",
       "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com",
     },
   };
   const searchProduct = async () => {
     try {
       const response = await axios.request(options);
-      console.log((products.value = response.data));
+      // console.log(response.data);
+      useProducts.updateProducts(JSON.stringify(response.data));
+      // console.log(useProducts.products);
     } catch (error) {
       console.error(error);
     }
   };
 
   searchProduct();
-  return products;
 };
