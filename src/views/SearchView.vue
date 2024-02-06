@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import ProductDisplay from "@/components/ProductDisplay.vue";
 import { useProductsStore } from "@/stores/Products";
 import Loading from "@/components/LoadingSearch.vue";

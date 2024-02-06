@@ -14,23 +14,16 @@ const submit = () => {
 </script>
 
 <template>
-  <main class="py-10">
+  <section class="py-5">
     <div class="container mx-auto">
       <form @submit.prevent="submit" class="">
-        <div class="mb-4 flex items-center">
-          <input
-            type="text"
-            placeholder="Search"
-            v-model="valueInput"
-            class="w-full rounded-lg border border-gray-400 p-2"
-          />
-          <button class="ml-2 rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-600">
-            Buscar
-          </button>
+        <div class="flex justify-center">
+          <input type="text" placeholder="Search" v-model="valueInput" class="w-2/4 rounded-lg border border-gray-400 p-2" />
+          <button class="ml-2 rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-600">Buscar</button>
         </div>
       </form>
     </div>
-  </main>
+  </section>
 </template>
 
 <style scoped></style>

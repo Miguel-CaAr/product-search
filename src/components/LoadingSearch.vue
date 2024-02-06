@@ -1,5 +1,7 @@
 <template>
-  <span class="loader"></span>
+  <div class="flex justify-center">
+    <span class="loader"></span>
+  </div>
 </template>
 
 <script setup></script>
@@ -9,7 +11,7 @@
   margin: 50px;
   width: 48px;
   height: 48px;
-  border: 5px solid #000000;
+  border: 5px solid rgb(59 130 246);
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;

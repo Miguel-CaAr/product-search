@@ -6,8 +6,8 @@ const productsStore = useProductsStore();
 const productsList = computed(() => JSON.parse(productsStore.products));
 </script>
 <template>
-  <div class="container mx-auto p-4">
-    <div v-if="productsList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+  <section class="container mx-auto p-4">
+    <main v-if="productsList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
       <!-- Replace this with your grid items -->
       <div
         v-for="product in productsList.data"
@@ -26,8 +26,8 @@ const productsList = computed(() => JSON.parse(productsStore.products));
         </RouterLink>
       </div>
       <!-- Add more items as needed -->
-    </div>
-  </div>
+    </main>
+  </section>
 </template>
 
 <style scoped></style>
