@@ -16,6 +16,7 @@ console.log(product);
   <h5>{{ product.product_description }}</h5>
   <p>Oferta en {{ product.offer.store_name }}</p>
   <p>Precio {{ product.offer.price }}</p>
+  <img :src="product.product_photos[0]" alt="" />
 </template>
 
 <style scoped></style>
