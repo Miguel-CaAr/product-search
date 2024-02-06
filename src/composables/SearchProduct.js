@@ -3,8 +3,8 @@ import { ref } from "vue";
 import { useProductsStore } from "@/stores/Products";
 
 export const useSearchProductBy = (isAProductId, value, url) => {
+  const productsStore = useProductsStore();
   const param = ref("");
-  const useProducts = useProductsStore();
 
   isAProductId ? (param.value = "product_id") : (param.value = "q");
 
@@ -17,18 +17,20 @@ export const useSearchProductBy = (isAProductId, value, url) => {
       language: "es",
     },
     headers: {
-      "X-RapidAPI-Key": "7181fc8c00mshfeee7afe9d857a7p1d50ecjsn027cf4dca720",
+      "X-RapidAPI-Key": "b0445131c6msh2cec10f6d94c296p14347cjsn5d13c32f995f",
       "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com",
     },
   };
   const searchProduct = async () => {
+    productsStore.showSpinnerHttp(true);
     try {
       const response = await axios.request(options);
-      useProducts.updateProducts(JSON.stringify(response.data));
+      productsStore.updateProducts(JSON.stringify(response.data));
     } catch (error) {
       console.error(error);
+    } finally {
+      productsStore.showSpinnerHttp(false);
     }
   };
-
   searchProduct();
 };

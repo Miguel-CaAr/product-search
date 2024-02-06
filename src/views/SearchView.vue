@@ -3,11 +3,11 @@ import ProductDisplay from "@/components/ProductDisplay.vue";
 import { useProductsStore } from "@/stores/Products";
 import Loading from "@/components/LoadingSearch.vue";
 
-const data = useProductsStore();
+const productsStore = useProductsStore();
 </script>
 
 <template>
-  <template v-if="!data.products">
+  <template v-if="productsStore.loadingHttpRef">
     <Loading />
   </template>
   <template v-else>
