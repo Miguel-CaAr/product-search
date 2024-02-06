@@ -7,7 +7,6 @@ export const useProductsStore = defineStore("products", () => {
   //Metodos
   const updateProducts = (newProducts) => {
     products.value = newProducts;
-    console.log("update");
   };
   //Metodos computados
 
