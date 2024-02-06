@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { RouterLink } from "vue-router";
 import { useProductsStore } from "@/stores/Products";
 const productsStore = useProductsStore();
-const productsList = computed(() => JSON.parse(productsStore.products));
+const productsList = computed(() => productsStore.products);
 </script>
 <template>
   <section class="container mx-auto p-4">

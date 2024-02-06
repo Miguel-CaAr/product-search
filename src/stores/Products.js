@@ -3,7 +3,7 @@ import { ref, computed } from "vue";
 
 export const useProductsStore = defineStore("products", () => {
   //Datos reactivos
-  const products = ref();
+  const products = ref([]);
   const loadingHttp = ref(true);
   //Metodos
   const updateProducts = (newProducts) => {

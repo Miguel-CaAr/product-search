@@ -2,8 +2,7 @@ import axios from "axios";
 import { ref } from "vue";
 import { useProductsStore } from "@/stores/Products";
 
-export const useSearchProductBy = (isAProductId, value, url) => {
-  const productsStore = useProductsStore();
+const searchProduct = (isAProductId, value, url) => {
   const param = ref("");
 
   isAProductId ? (param.value = "product_id") : (param.value = "q");
@@ -21,16 +20,20 @@ export const useSearchProductBy = (isAProductId, value, url) => {
       "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com",
     },
   };
-  const searchProduct = async () => {
-    productsStore.showSpinnerHttp(true);
-    try {
-      const response = await axios.request(options);
-      productsStore.updateProducts(JSON.stringify(response.data));
-    } catch (error) {
-      console.error(error);
-    } finally {
-      productsStore.showSpinnerHttp(false);
-    }
-  };
-  searchProduct();
+
+  return options;
+};
+
+export const useSearchProductBy = async (isAProductId, value, url) => {
+  const productsStore = useProductsStore();
+
+  productsStore.showSpinnerHttp(true);
+  try {
+    const response = await axios.request(searchProduct(isAProductId, value, url));
+    productsStore.updateProducts(response.data);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    productsStore.showSpinnerHttp(false);
+  }
 };

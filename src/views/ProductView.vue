@@ -5,9 +5,9 @@ import { useProductsStore } from "@/stores/Products";
 
 const route = useRoute();
 const productID = ref();
-const productsStore = JSON.parse(useProductsStore().products).data;
+const productsStore = useProductsStore();
 productID.value = route.params.id;
-const product = productsStore.find((product) => product.product_id === productID.value);
+const product = productsStore.products.data.find((product) => product.product_id === productID.value);
 console.log(product);
 </script>
 
