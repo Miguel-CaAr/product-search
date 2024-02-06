@@ -24,9 +24,7 @@ export const useSearchProductBy = (isAProductId, value, url) => {
   const searchProduct = async () => {
     try {
       const response = await axios.request(options);
-      // console.log(response.data);
       useProducts.updateProducts(JSON.stringify(response.data));
-      // console.log(useProducts.products);
     } catch (error) {
       console.error(error);
     }

@@ -9,7 +9,7 @@ const valueInput = ref("");
 
 const submit = () => {
   useSearchProductBy(false, valueInput, url);
-  router.push("/");
+  router.push(`/search/${valueInput.value}`);
 };
 </script>
 
