@@ -8,7 +8,7 @@ const url = "https://real-time-product-search.p.rapidapi.com/search";
 const valueInput = ref("");
 
 const submit = () => {
-  useSearchProductBy(false, valueInput, url);
+  useSearchProductBy(false, valueInput.value, url);
   router.push(`/search/${valueInput.value}`);
 };
 </script>
