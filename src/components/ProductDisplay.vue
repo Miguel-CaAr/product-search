@@ -12,10 +12,10 @@ const productsList = computed(() => productsStore.products);
       <div
         v-for="product in productsList.data"
         :key="product.product_id"
-        class="mx-auto mt-11 w-50 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg"
+        class="mx-auto mt-11 w-50 transform overflow-hidden rounded-lg bg-blue-500 shadow-md duration-300 hover:scale-105 hover:shadow-lg"
       >
         <RouterLink :to="`/product/${product.product_id}`">
-          <img class="h-48 object-cover mx-auto object-center" :src="product.product_photos[0]" alt="Product Image" />
+          <img class="h-48 object-cover mx-auto object-center p-2" :src="product.product_photos[0]" alt="Product Image" />
           <div class="p-4">
             <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">{{ product.product_title }}</h2>
             <p class="mb-2 text-base dark:text-gray-300 text-gray-700">{{ product.offer.store_name }}</p>
