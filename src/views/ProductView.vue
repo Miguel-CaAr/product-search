@@ -7,7 +7,9 @@ const route = useRoute();
 const productID = ref();
 const productsStore = useProductsStore();
 productID.value = route.params.id;
-const product = productsStore.products.data.find((product) => product.product_id === productID.value);
+const product = productsStore.products.data.find(
+  (product) => product.product_id === productID.value
+);
 console.log(product);
 </script>
 
@@ -21,8 +23,16 @@ console.log(product);
           :src="product.product_photos[0]"
         />
         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-          <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ product.offer.store_name }}</h2>
-          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.product_title }}</h1>
+          <h2
+            class="text-sm title-font text-gray-500 tracking-widest"
+          >
+            {{ product.offer.store_name }}
+          </h2>
+          <h1
+            class="text-gray-900 text-3xl title-font font-medium mb-1"
+          >
+            {{ product.product_title }}
+          </h1>
           <div class="flex mb-4">
             <span class="flex items-center">
               <svg
@@ -34,7 +44,9 @@ console.log(product);
                 class="w-4 h-4 text-red-500"
                 viewBox="0 0 24 24"
               >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
               </svg>
               <svg
                 fill="currentColor"
@@ -45,7 +57,9 @@ console.log(product);
                 class="w-4 h-4 text-red-500"
                 viewBox="0 0 24 24"
               >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
               </svg>
               <svg
                 fill="currentColor"
@@ -56,7 +70,9 @@ console.log(product);
                 class="w-4 h-4 text-red-500"
                 viewBox="0 0 24 24"
               >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
               </svg>
               <svg
                 fill="currentColor"
@@ -67,7 +83,9 @@ console.log(product);
                 class="w-4 h-4 text-red-500"
                 viewBox="0 0 24 24"
               >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
               </svg>
               <svg
                 fill="none"
@@ -78,7 +96,9 @@ console.log(product);
                 class="w-4 h-4 text-red-500"
                 viewBox="0 0 24 24"
               >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
               </svg>
               <span class="text-gray-600 ml-3">4 Reviews</span>
             </span>
@@ -86,10 +106,17 @@ console.log(product);
           <p class="leading-relaxed max-h-40 overflow-auto">
             {{ product.product_description }}
           </p>
-          <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"></div>
+          <div
+            class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"
+          ></div>
           <div class="flex">
-            <span class="title-font font-medium text-2xl text-gray-900">{{ product.offer.price }}</span>
-            <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+            <span
+              class="title-font font-medium text-2xl text-green-500"
+              >{{ product.offer.price }}</span
+            >
+            <button
+              class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"
+            >
               Button
             </button>
             <button
